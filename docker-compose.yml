@@ -1,0 +1,28 @@
+version: "3.4"
+
+services:
+  server:
+    image: server
+    build:
+      context: server
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5000:5000
+  client:
+    image: client
+    build:
+      context: client
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    links:
+      - "server:se"
+     # The keyword'depends_on' allows you to define whether the service
+     # should wait until other services are ready before launching.
+     # Here, we want the 'client' service to wait until the 'server' service is ready.
+  
+

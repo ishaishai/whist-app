@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingCart from "./ShoppingCart";
 const Navbar = ({ cartItems, dispatchOrder }) => {
-  const [activeItem, setActiveItem] = useState("home");
+  const [activeItem, setActiveItem] = useState(window.location.pathname);
 
   const handleItemClick = (e) => {
     setActiveItem((e.target.innerHTML).toLowerCase());

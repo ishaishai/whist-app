@@ -4,10 +4,7 @@ import {
   Card,
   Icon,
   Button,
-  Dimmer,
-  Loader,
 } from "semantic-ui-react";
-import { useState } from "react";
 
 const Home = ({ products, addToCart }) => {
   return (
