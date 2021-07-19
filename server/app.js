@@ -22,7 +22,6 @@ dbInstance.once("open", () => {
  
 });
 
-
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.urlencoded({ extended: false }));
